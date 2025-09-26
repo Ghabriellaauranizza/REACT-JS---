@@ -397,7 +397,7 @@ function App() {
 
       {/* TEAM */}
       <div id="team" className="container marketing">
-        <h1 className="text-center mb-4">Contact Us</h1>
+        <h1 className="text-center mb-4">OUR TEAM</h1>
         <div className="row text-center">
           {/* Member 1 */}
           <div className="col-lg-4">
@@ -446,7 +446,7 @@ function App() {
       {/* Contact */}
       <section id="contact" className="container my-5"></section>
       <div className="container mt-5">
-            <h1 className="text-center mb-4">Contact Us</h1>
+            <h1 className="text-center mb-4">CONTACT US</h1>
 
         <div className="row g-4">
           {/* Form Contact */}
