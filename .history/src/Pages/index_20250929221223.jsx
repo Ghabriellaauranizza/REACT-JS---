@@ -25,7 +25,7 @@ export default function Home(){
 
         {/* Product List */}
         {/* <ProdukList/> */}
-        <Buku/>
+        {/* <Buku/> */}
 
         {/* Footer */}
         <Footer/>

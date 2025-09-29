@@ -1,8 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router";
 
-
-// PADA BAGIAN REGISTER INI, DITAMBAHKAN HOOKS USEREF
 export default function Register() {
   const emailRef = useRef(); // Hook untuk fokus input email
   const [email, setEmail] = useState(""); // Hook untuk menyimpan email

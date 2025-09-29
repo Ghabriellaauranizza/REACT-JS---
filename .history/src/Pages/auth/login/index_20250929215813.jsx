@@ -1,25 +1,15 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import { Link } from "react-router";
 
-
-// PADA BAGIAN REGISTER INI, DITAMBAHKAN HOOKS USEREF
-export default function Register() {
-  const emailRef = useRef(); // Hook untuk fokus input email
-  const [email, setEmail] = useState(""); // Hook untuk menyimpan email
-  const [password, setPassword] = useState(""); // Hook untuk menyimpan password
+export default function Login() {
+  const emailRef = useRef(); // hook baru
 
   useEffect(() => {
+    // fokus input saat komponen mount
     if (emailRef.current) {
-      emailRef.current.focus(); // Fokus otomatis ke email saat komponen mount
+      emailRef.current.focus();
     }
   }, []);
-
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Mencegah reload halaman
-    console.log("Email:", email);
-    console.log("Password:", password);
-    // Bisa lanjutkan dengan proses register (API call, dsb.)
-  };
 
   return (
     <>
@@ -33,22 +23,20 @@ export default function Register() {
           <div className="modal-content rounded-4 shadow">
             {/* Header */}
             <div className="modal-header p-5 pb-4 border-bottom-0 d-flex justify-content-center">
-              <h1 className="fw-bold mb-0 fs-2">Register</h1>
+              <h1 className="fw-bold mb-0 fs-2">Login</h1>
             </div>
 
             {/* Body */}
             <div className="modal-body p-5 pt-0">
-              <form onSubmit={handleSubmit}>
+              <form>
                 {/* Email */}
                 <div className="form-floating mb-3">
                   <input
-                    ref={emailRef} // Hook ref ditambahkan
+                    ref={emailRef} // hook ditambahkan di sini
                     type="email"
                     className="form-control rounded-3"
                     id="floatingInput"
                     placeholder="name@example.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
                   />
                   <label htmlFor="floatingInput">Email address</label>
                 </div>
@@ -60,8 +48,6 @@ export default function Register() {
                     className="form-control rounded-3"
                     id="floatingPassword"
                     placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
                   />
                   <label htmlFor="floatingPassword">Password</label>
                 </div>
@@ -71,10 +57,10 @@ export default function Register() {
                   className="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
                   type="submit"
                 >
-                  Register
+                  Login
                 </button>
                 <small className="text-body-secondary">
-                  By clicking Register, you agree to the terms of use.
+                  By clicking Login, you agree to the terms of use.
                 </small>
 
                 <hr className="my-4" />
@@ -87,7 +73,7 @@ export default function Register() {
                   type="button"
                 >
                   <i className="fa-brands fa-google me-2"></i>
-                  Register with Google
+                  Login with Google
                 </button>
 
                 <button
@@ -95,7 +81,7 @@ export default function Register() {
                   type="button"
                 >
                   <i className="fa-brands fa-facebook me-2"></i>
-                  Register with Facebook
+                  Login with Facebook
                 </button>
 
                 <button
@@ -103,14 +89,14 @@ export default function Register() {
                   type="button"
                 >
                   <i className="fa-brands fa-github me-2"></i>
-                  Register with GitHub
+                  Login with GitHub
                 </button>
               </form>
 
               <p className="mt-3 text-center">
-                Already have an account?{" "}
-                <a href="/login" style={{ color: "#ff69b4" }}>
-                  Login
+                Don't have an account yet?{" "}
+                <a href="/register" style={{ color: "#ff69b4" }}>
+                  Register
                 </a>
               </p>
             </div>
